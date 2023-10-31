@@ -23,5 +23,5 @@ A binary search tree (BST) is a type of binary tree with the property that the v
 This project aims to explore and implement various aspects of binary trees, such as creating, traversing, and working with binary search trees, to gain a deeper understanding of these fundamental data structures in computer science.
 
 ## Authors
-Siduduzile Snenhlanhla Mdima
-Franklin Obiukwu
+    Siduduzile Snenhlanhla Mdima
+    Franklin Obiukwu
