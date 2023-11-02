@@ -24,25 +24,28 @@ int binary_tree_height_helper(const binary_tree_t *tree)
 	return (1 + MAX(left_tree_height, right_tree_height));
 }
 
-
 /**
-* binary_tree_balance - Function that measures
-* the balance factor of a binary tree
+* binary_tree_is_perfect - Function that checks if a binary tree is perfect
 *
-* @tree: Pinter to the root node of the
-* tree to measure the balance factor
+* @tree: Pointer to the root node of the tree to check
 * Return: 0 if tree is NULL
 */
 
-int binary_tree_balance(const binary_tree_t *tree)
+int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int left_subtree, right_subtree;
+	int left_tree_height, right_tree_height;
 
 	if (tree == NULL)
 		return (0);
 
-	left_subtree = binary_tree_height_helper(tree->left);
-	right_subtree = binary_tree_height_helper(tree->right);
 
-	return (left_subtree - right_subtree);
+	left_tree_height = binary_tree_height_helper(tree->left);
+	right_tree_height = binary_tree_height_helper(tree->right);
+
+	if (left_tree_height == right_tree_height)
+	{
+		return (binary_tree_is_perfect(tree->left) &&
+		binary_tree_is_perfect(tree->right));
+	}
+	return (0);
 }
